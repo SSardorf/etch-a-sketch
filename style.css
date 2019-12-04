@@ -1,0 +1,27 @@
+html, body {
+
+    width: auto;
+}
+
+
+.wrapper{
+    width: 560px;
+    height: 560px;
+    border: black;
+    border-width: 2px;
+    border-style: dashed;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(16, 1fr);
+
+}
+
+
+.gridChildren{
+    background-color: white;
+}
+.color{
+    background-color: black;
+}

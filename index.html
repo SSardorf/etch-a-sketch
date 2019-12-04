@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html> 
+    <head>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+
+    <body>
+        <button id="erase">Erase</button>
+        <button id="resize">Resize</button>
+
+        <div class="wrapper">
+
+        </div>
+
+
+    </body> 
+
+
+
+<footer>
+
+    <script>
+        function createBoard(size){
+            grid.style.gridTemplateRows = "repeat(" + size + ", 1fr)";
+            grid.style.gridTemplateColumns = "repeat(" + size + ", 1fr)"
+
+            while (grid.firstChild) {
+            grid.removeChild(grid.firstChild);
+            }
+            for(i=0;i<size*size;i++){ /* Appending all of the children(Grid)    */
+                child = grid.appendChild(document.createElement("div"));
+                child.classList.add("gridChildren");
+
+        }}
+
+        function addColorClass(child){
+            child.addEventListener("mouseenter", function(i){
+                child.classList.add("color")
+            });
+        };
+
+        function removeColorClass(child){
+            child.classList.remove("color")
+        }
+        
+        const grid = document.querySelector(".wrapper");
+        const erase = document.querySelector("#erase");
+        const resize = document.querySelector("#resize");
+        createBoard(16);
+        
+
+        
+
+        
+
+        let childList = document.querySelectorAll(".gridChildren");
+        childList.forEach(addColorClass)
+
+        erase.addEventListener("click", function(e){
+            childList.forEach(removeColorClass)
+
+        });
+
+
+        /*
+        function eraseAll(childList){
+            childList.forEach(child.classList.remove("color"))
+        }
+       */
+        
+
+        
+        
+
+        
+
+    </script>
+
+</footer>
+
+</html>
