@@ -3,6 +3,12 @@ html, body {
     width: auto;
 }
 
+#buttons{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    text-align: center;
+}
 
 .wrapper{
     width: 560px;

@@ -5,9 +5,10 @@
     </head>
 
     <body>
-        <button id="erase">Erase</button>
-        <button id="resize">Resize</button>
-
+        <div id="buttons">
+            <button id="erase">Erase</button>
+            <button id="resize">Resize</button>
+        </div>
         <div class="wrapper">
 
         </div>
@@ -31,7 +32,15 @@
                 child = grid.appendChild(document.createElement("div"));
                 child.classList.add("gridChildren");
 
-        }}
+        }
+        let childList = document.querySelectorAll(".gridChildren");
+        childList.forEach(addColorClass);
+
+        erase.addEventListener("click", function(e){
+            childList.forEach(removeColorClass)
+
+        });
+        }
 
         function addColorClass(child){
             child.addEventListener("mouseenter", function(i){
@@ -46,19 +55,18 @@
         const grid = document.querySelector(".wrapper");
         const erase = document.querySelector("#erase");
         const resize = document.querySelector("#resize");
-        createBoard(16);
+        createBoard(64);
         
 
         
 
         
 
-        let childList = document.querySelectorAll(".gridChildren");
-        childList.forEach(addColorClass)
+        
 
-        erase.addEventListener("click", function(e){
-            childList.forEach(removeColorClass)
-
+        resize.addEventListener("click", function(e){
+            size = prompt("What size grid do you want? 1-64");
+            createBoard(size)
         });
 
 
